@@ -1,0 +1,42 @@
+---
+title: "Air Passengers"
+output: 
+  flexdashboard::flex_dashboard:
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(ggplot2)
+library(forecast)
+```
+Column
+--------------------------------------------------------------------------
+### Plot Graph
+
+```{r}
+data(AirPassengers)
+AP <- AirPassengers
+plot(AP,xlab="Date", ylab = "Passenger numbers per 1000's",main="Air Passenger from 1949 to 1961")
+```
+
+### Boxplot
+
+```{r}
+boxplot(AP~cycle(AP),xlab="Date", ylab = "Passenger Numbers (1000's)" ,main ="Monthly Air Passengers Boxplot from 1949 to 1961")
+```
+
+Column
+--------------------------------------------------------------------------
+### ARIMA
+
+```{r}
+arimaAP <- auto.arima(AP)
+forecastAP<- forecast(arimaAP, level = c(80),h=109)
+autoplot(forecastAP)
+```
+
+### Linear Regression
+```{r}
+autoplot(AP) + geom_smooth(method="lm")+ labs(x ="Date", y = "Passenger numbers per 1000's", title="Air Passengers from 1949 to 1961") 
+```
