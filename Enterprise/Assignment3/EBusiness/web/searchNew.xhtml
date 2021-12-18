@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>Search for a new car</title>
+</h:head>
+<h:body>
+    <h1>Search for a new car</h1>
+    <hr/>
+    <h:form>
+        <table border="0">
+            
+            <tr>
+                <td>
+                    <h:outputLabel value="Reference Number : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.newRef}"/>
+                </td>
+            </tr>
+                  
+        </table>
+
+        <h:commandButton value="Search for a new car" action="#{vehicleController.searchNew}"/>       
+    </h:form>
+        <h:link outcome="newNew.xhtml" value="Create a brand new car"/>|
+        <h:link outcome="index.xhtml" value="Main Page"/>
+    <hr/>
+
+</h:body>
+</html>

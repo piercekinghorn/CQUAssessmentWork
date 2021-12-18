@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>List of brand new cars</title>
+</h:head>
+<h:body>
+    <h1>List of brand new Cars</h1>
+    <hr/>
+    <h:dataTable value="#{vehicleController.newList}" var="new" border="1">
+        
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Make"/>
+            </f:facet>
+            <h:outputText value="#{new.make}"/>
+        </h:column>
+        
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Model"/>
+            </f:facet>
+            <h:outputText value="#{new.model}"/>
+        </h:column>
+        
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Reference Number"/>
+            </f:facet>
+            <h:form>
+            <h:commandLink value = "#{new.refId}" action="#{vehicleController.newDetails(new.refId)}"/> 
+            </h:form>
+        </h:column>
+       
+
+
+    </h:dataTable>
+    
+    <h:outputText value="#{vehicleController.totalNew()}"/>
+    
+    <h:form>
+        <h:link outcome="newNew.xhtml" value="Create a brand new car"/>|
+        <h:link outcome="index.xhtml" value="Main Page"/>
+    </h:form>
+    
+    <hr/>
+
+</h:body>
+</html>

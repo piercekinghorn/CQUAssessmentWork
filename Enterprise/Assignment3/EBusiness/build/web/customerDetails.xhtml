@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>Customer: #{customerController.customerDetails.name}</title>
+</h:head>
+<h:body>
+    <h1>Customer: #{customerController.customerDetails.name}</h1>
+    <hr/>
+    
+    <h3>Details</h3>
+    <a>ID: #{customerController.customerDetails.id}</a><br></br>
+    <a>Name: #{customerController.customerDetails.name}</a><br></br>
+    <a>Phone Number: #{customerController.customerDetails.phone}</a><br></br>
+    <a>Address: #{customerController.customerDetails.address}</a><br></br>
+    <a>Email Address: #{customerController.customerDetails.email}</a>
+    <hr/>
+    
+    <h3>Orders (#{customerController.customerDetails.size})</h3>
+    <h:dataTable value="#{customerController.customerOrdersList}" var="orders" border="1">
+        
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Order ID"/>
+            </f:facet>
+            <h:outputText value="#{orders.id}"/>
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Time Created"/>
+            </f:facet>
+            <h:outputText value="#{orders.timeCreated}"/>
+        </h:column>
+        
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Vehicle"/>
+            </f:facet>
+            <h:outputText value="#{orders.vehicle.make}"/>
+        </h:column>
+        
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Price"/>
+            </f:facet>
+            <h:outputText value="$#{orders.vehicle.price}"/>
+        </h:column>
+                
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Quantity"/>
+            </f:facet>
+            <h:outputText value="#{orders.quantity}"/>
+        </h:column>
+        
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Total Price"/>
+            </f:facet>
+            <h:outputText value="$#{orders.totalprice}"/>
+        </h:column>
+        w
+    </h:dataTable>
+    
+    <h:form>
+        <h:link outcome="listCustomers.xhtml" value="Customer list"/>|
+        <h:link outcome="index.xhtml" value="Main Page"/>
+    </h:form>
+    
+    <hr/>
+
+</h:body>
+</html>

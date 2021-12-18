@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>Creates a Customer</title>
+</h:head>
+<h:body>
+    <h1>Create a new Customer</h1>
+    <hr/>
+    <h:form>
+        <table border="0">
+            
+            <tr>
+                <td>
+                    <h:outputLabel value="Name : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{customerController.customer.name}" required="true"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h:outputLabel value="Email : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{customerController.customer.email}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h:outputLabel value="Phone :"/>
+                </td>
+                <td>
+                    <h:inputText value="#{customerController.customer.phone}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h:outputLabel value="Address : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{customerController.customer.address}" required="true"/>
+                </td>
+            </tr>
+            
+        </table>
+
+        <h:commandButton value="Create a Customer" action="#{customerController.doCreateCustomer}"/>
+          
+    </h:form>
+        <h:link outcome="listCustomers.xhtml" value="View Customers"/>|
+        <h:link outcome="index.xhtml" value="Main Page"/>
+    <hr/>
+    
+</h:body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>Create a used car</title>
+</h:head>
+<h:body>
+    <h1>Create a used car</h1>
+    <hr/>
+    <h:form>
+        <table border="0">
+            
+            <tr>
+                <td>
+                    <h:outputLabel value="Reference Number : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.usedVehicle.refId}" required="true"/>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <h:outputLabel value="Car Make : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.usedVehicle.make}" required="true"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h:outputLabel value="Car Model : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.usedVehicle.model}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h:outputLabel value="Drive Type :"/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.usedVehicle.driveType}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h:outputLabel value="Body Colour : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.usedVehicle.colour}" required="true"/>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <h:outputLabel value="Transmission : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.usedVehicle.transmission}" required="true"/>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <h:outputLabel value="Car Engine : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.usedVehicle.engine}" required="true"/>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <h:outputLabel value="Fuel Type : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.usedVehicle.fuelType}" required="true"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h:outputLabel value="Number of Doors : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.usedVehicle.doors}" required="true"/>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <h:outputLabel value="Number of Seats : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.usedVehicle.seats}" required="true"/>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <h:outputLabel value="Price : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.usedVehicle.price}" required="true"/>
+                </td>
+            </tr>
+                        
+           <tr>
+                <td>
+                    <h:outputLabel value="Odometer : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.usedVehicle.odometer}" required="true"/>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <h:outputLabel value="Registration Number : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.usedVehicle.regoNo}" required="true"/>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <h:outputLabel value="Registration Expiry : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.usedVehicle.regoExp}" required="true"/>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <h:outputLabel value="Service History : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.usedVehicle.serviceHist}" required="true"/>
+                </td>
+            </tr>
+            
+           <tr>
+                <td>
+                    <h:outputLabel value="Car History : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.usedVehicle.carHist}" required="true"/>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <h:outputLabel value="Vehicle Identification Number : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.usedVehicle.VIN}" required="true"/>
+                </td>
+            </tr>
+            
+            
+            
+        </table>
+
+        <h:commandButton value="Create a used car" action="#{vehicleController.doCreateUsed}"/>         
+    </h:form>
+           <h:link outcome="listUsed.xhtml" value="View used car stock"/>|
+           <h:link outcome="index.xhtml" value="Main Page"/>
+    <hr/>
+
+</h:body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>Create a new Order</title>
+</h:head>
+<h:body>
+    <h1>Create a new Order</h1>
+    <hr/>
+   
+    
+    <h:form enctype="multipart/form-data"> 
+        
+        <table border="0">
+            <tr>
+                <td>
+                    <h:outputLabel value="Customer : "/>
+                </td>
+                <td>
+                    <h:selectOneMenu value = "#{ordersController.custId}">
+                         <f:selectItems value="#{customerController.customerList}" var="customer" itemValue="#{customer.id}" itemLabel="#{customer.name}" />    
+                    </h:selectOneMenu>  
+                </td>
+            </tr>
+            <tr>
+                <td>                  
+                    <h:outputLabel value="Vehicle : "/>
+                </td>
+                <td>     
+                    <h:selectOneMenu value = "#{ordersController.refId}"> 
+                        <f:selectItems value="#{vehicleController.vehicleList}" var="vehicle" itemValue="#{vehicle.refId}" itemLabel="#{vehicle.make} - #{vehicle.price} " />    
+                    </h:selectOneMenu>  
+                </td>
+            </tr>    
+            <tr>
+                <td>  
+                    <h:outputLabel value="Quantity : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{ordersController.orders.quantity}" required="true"/>
+                </td>
+            </tr>
+        </table>  
+               
+        <h:commandButton value = "Submit" action = "#{ordersController.doCreateOrders()}" /> 
+                  
+          
+    </h:form>  
+    <a href="listOrders.faces"> View Orders </a>
+    <a href="index.faces"> Main Page </a>
+      
+    <hr/>
+    
+</h:body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>Create a brand new car</title>
+</h:head>
+<h:body>
+    <h1>Create a brand new car</h1>
+    <hr/>
+    <h:form>
+        <table border="0">
+            
+            <tr>
+                <td>
+                    <h:outputLabel value="Reference Number : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.newVehicle.refId}" required="true"/>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <h:outputLabel value="Car Make : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.newVehicle.make}" required="true"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h:outputLabel value="Car Model : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.newVehicle.model}" required="true" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h:outputLabel value="Drive Type :"/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.newVehicle.driveType}" required="true"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h:outputLabel value="Body Colour : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.newVehicle.colour}" required="true"/>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <h:outputLabel value="Transmission : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.newVehicle.transmission}" required="true"/>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <h:outputLabel value="Car Engine : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.newVehicle.engine}" required="true"/>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <h:outputLabel value="Fuel Type : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.newVehicle.fuelType}" required="true"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h:outputLabel value="Number of Doors : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.newVehicle.doors}" required="true"/>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <h:outputLabel value="Number of Seats : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.newVehicle.seats}" required="true"/>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <h:outputLabel value="Price : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.newVehicle.price}" required="true"/>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <h:outputLabel value="Warranty : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.newVehicle.warranty}" required="true"/>
+                </td>
+            </tr>
+            
+                        <tr>
+                <td>
+                    <h:outputLabel value="Extending Warranty : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.newVehicle.extWarranty}" required="true"/>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <h:outputLabel value="Road Side Assistance Package : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.newVehicle.RSA}" required="true"/>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <h:outputLabel value="Number of Cars : "/>
+                </td>
+                <td>
+                    <h:inputText value="#{vehicleController.newVehicle.carNo}" required="true"/>
+                </td>
+            </tr>
+            
+            
+        </table>
+
+        <h:commandButton value="Create a brand new car" action="#{vehicleController.doCreateNew}"/>
+    </h:form>
+       <h:link outcome="listNew.xhtml" value="View new car stock"/>|
+       <h:link outcome="index.xhtml" value="Main Page"/>
+    <hr/>
+
+</h:body>
+</html>
